@@ -29,9 +29,4 @@ namespace Habilitations.Models
         public int? JobId { get; set; }
         public virtual Job Job { get; set; }
     }
-
-    public class USerDBContext : DbContext
-    {
-        public DbSet<User> Users { get; set; }
-    }
 }

@@ -9,7 +9,7 @@ namespace Habilitations.Controllers
 {
     public class MetierController : Controller
     {
-        private USerDBContext db = new USerDBContext();
+        private AppDBContext db = new AppDBContext();
 
         //
         // GET: /Metier/

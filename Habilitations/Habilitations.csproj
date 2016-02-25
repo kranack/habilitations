@@ -31,14 +31,11 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
-        <ObjectGroup Name="DefaultConnection-Déploiement" Order="1">
+        <ObjectGroup Name="DefaultConnection-Déploiement" Order="2" xmlns="">
           <Destination Path="" />
           <Object Type="DbFullSql">
-            <PreSource Path="Data Source=%28LocalDB%29\v11.0%3bAttachDbFilename=|DataDirectory|\Habilitations.Models.USerDBContext.mdf%3bIntegrated Security=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Déploiement_SchemaAndData.sql" Transacted="True" />
-          </Object>
-          <Object Type="DbFullSql">
-            <Source Path="Data_Scripts\Startup.Script.sql" Transacted="False" />
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-Habilitations-20160225090021.mdf%3bInitial Catalog=aspnet-Habilitations-20160225090021%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Déploiement_SchemaOnly.sql" Transacted="True" />
           </Object>
         </ObjectGroup>
       </Objects>
@@ -146,6 +143,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppIdentity.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Metier.cs" />

@@ -18,9 +18,4 @@ namespace Habilitations.Models
         public int CategorieId { get; set; }
         public virtual Categorie Categorie { get; set; }
     }
-
-    public class MetiersDBContext : DbContext
-    {
-        public DbSet<Metier> Metiers { get; set; }
-    }
 }

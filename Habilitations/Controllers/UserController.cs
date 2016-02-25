@@ -13,7 +13,7 @@ namespace Habilitations.Controllers
 {
     public class UserController : Controller
     {
-        private USerDBContext db = new USerDBContext();
+        private AppDBContext db = new AppDBContext();
 
         //
         // GET: /User/

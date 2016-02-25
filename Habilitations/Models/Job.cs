@@ -22,9 +22,4 @@ namespace Habilitations.Models
 
         //[ForeignKey("User")]
     }
-
-    public class JobDBContext : DbContext
-    {
-        public DbSet<Job> Jobs { get; set; }
-    }
 }

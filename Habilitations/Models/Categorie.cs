@@ -15,9 +15,4 @@ namespace Habilitations.Models
 
         public virtual ICollection<Metier> Metiers { get; set; }
     }
-
-    public class CategoriesDBContext : DbContext
-    {
-        public DbSet<Categorie> Categories { get; set; }
-    }
 }
