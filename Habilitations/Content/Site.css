@@ -35,6 +35,14 @@ textarea {
     margin: 0.5em 0 0 0;
 }
 
+.editor-uppercase input {
+    text-transform: uppercase;
+}
+
+.editor-capitalize input {
+    text-transform: capitalize;
+}
+
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/

@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MetierController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -135,6 +136,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Habilitations.Models.USerDBContext.mdf" />
+    <Content Include="App_Data\Habilitations.Models.USerDBContext_log.ldf">
+      <DependentUpon>Habilitations.Models.USerDBContext.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -209,6 +214,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Metier\Index.aspx" />
     <Content Include="Views\User\Signup.aspx" />
     <Content Include="Views\User\Delete.aspx" />
     <Content Include="Views\User\Details.aspx" />
@@ -225,9 +231,7 @@
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\Main.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
