@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Habilitations.Models;
+using System.Globalization;
+using System.Threading;
 
 namespace Habilitations.Controllers
 {
@@ -52,7 +54,11 @@ namespace Habilitations.Controllers
             if (ModelState.IsValid)
             {
                 string matricule = user.Prenom[0] + user.Nom;
+                CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+                TextInfo textInfo = cultureInfo.TextInfo;
                 user.Matricule = matricule.ToLower();
+                user.Nom = user.Nom.ToUpper();
+                user.Prenom = textInfo.ToTitleCase(user.Prenom);
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
