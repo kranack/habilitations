@@ -59,6 +59,7 @@ namespace Habilitations.Controllers
                 user.Matricule = matricule.ToLower();
                 user.Nom = user.Nom.ToUpper();
                 user.Prenom = textInfo.ToTitleCase(user.Prenom);
+                Console.WriteLine(user);
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

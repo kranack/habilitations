@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Habilitations.Models
 {
@@ -16,9 +17,17 @@ namespace Habilitations.Models
         [Required]
         public string Prenom { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateNaissance { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateEntree { get; set; }
+
+        //[ForeignKey("Job")]
+        public int? JobId { get; set; }
+        public virtual Job Job { get; set; }
     }
 
     public class USerDBContext : DbContext

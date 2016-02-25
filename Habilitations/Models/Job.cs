@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -13,10 +16,15 @@ namespace Habilitations.Models
 
         public DateTime? FinJob { get; set; }
 
+        //[ForeignKey("Metier")]
         public int MetierId { get; set; }
-        public Metier Metier { get; set; }
+        public virtual Metier Metier { get; set; }
 
-        public int UserId { get; set; }
-        public User User { get; set; }
+        //[ForeignKey("User")]
+    }
+
+    public class JobDBContext : DbContext
+    {
+        public DbSet<Job> Jobs { get; set; }
     }
 }
