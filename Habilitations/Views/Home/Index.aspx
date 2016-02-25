@@ -10,4 +10,6 @@
 
 <p><a href="/User/Signup">S'inscrire</a></p>
 
+<p><a href="/Metier">Ajouter un métier</a></p>
+
 </asp:Content>

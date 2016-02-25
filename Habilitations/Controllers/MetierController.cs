@@ -1,6 +1,7 @@
 ﻿using Habilitations.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -25,6 +26,35 @@ namespace Habilitations.Controllers
             }
 
             return View(users);
+        }
+
+        //
+        // GET: /Metier/Add/5
+
+        public ActionResult Add(int id = 0)
+        {
+            User user = db.Users.Find(id);
+            DbSet<Categorie> categories = db.Categories;
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categories);
+        }
+
+        //
+        // POST: /Metier/Add
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Job job)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
+
+            return View(job);
         }
 
     }

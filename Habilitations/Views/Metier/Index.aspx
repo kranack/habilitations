@@ -30,6 +30,9 @@
             <th>
                 Date d'entrée en entreprise
             </th>
+            <th>
+                Actions
+            </th>
         </tr>
         <% foreach (var item in Model) { %>
             <tr>
@@ -44,6 +47,9 @@
                 </td>
                 <td>
                     <%: Html.DisplayFor(modelItem => item.DateEntree) %>
+                </td>
+                <td>
+                    <%: Html.ActionLink("Add", "Add", new { id=item.ID }) %> |
                 </td>
             </tr>
         <% } %>

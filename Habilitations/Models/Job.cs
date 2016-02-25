@@ -12,11 +12,18 @@ namespace Habilitations.Models
     {
         public int ID { get; set; }
 
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DebutJob { get; set; }
 
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? FinJob { get; set; }
 
         //[ForeignKey("Metier")]
+        [Required]
         public int MetierId { get; set; }
         public virtual Metier Metier { get; set; }
 
