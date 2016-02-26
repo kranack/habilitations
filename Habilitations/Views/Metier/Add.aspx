@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<Habilitations.Models.Job>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ import namespace="Habilitations.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Add
@@ -15,23 +16,19 @@
     <fieldset>
         <legend>Metier</legend>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.DebutJob) %>
-        </div>
-        <div class="editor-field editor-uppercase">
-            <%: @Html.EditorFor(model => model.DebutJob) 
-            %>
-            <%: Html.ValidationMessageFor(model => model.DebutJob) %>
-        </div>
+        <select>
+            <% foreach(Categorie categorie in Model) { %>
+        
+                <optgroup label="<%: categorie.Nom %>">
+                    <% foreach(Metier metier in categorie.Metiers) { %>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.FinJob) %>
-        </div>
-        <div class="editor-field editor-capitalize">
-            <%: Html.EditorFor(model => model.FinJob) %>
-            <%: Html.ValidationMessageFor(model => model.FinJob) %>
-        </div>
+                      <option value="<%: metier.Nom %>"><%: metier.Nom %></option>
 
+                    <% } %>
+                </optgroup>
+
+            <% } %>
+        </select>
         <p>
             <input type="submit" value="Create" />
         </p>

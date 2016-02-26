@@ -35,6 +35,10 @@ namespace Habilitations.Controllers
         {
             User user = db.Users.Find(id);
             DbSet<Categorie> categories = db.Categories;
+            System.Diagnostics.Debug.WriteLine(user.Matricule);
+            foreach(Categorie categorie in categories) {
+                System.Diagnostics.Debug.WriteLine(categorie.Nom);
+            }
             if (user == null)
             {
                 return HttpNotFound();
