@@ -27,7 +27,5 @@ namespace Habilitations.Models
         //[ForeignKey("Categorie")]
         public int CategorieId { get; set; }
         public virtual Categorie Categorie { get; set; }
-
-        public virtual ICollection<User> Users { get; set; }
     }
 }

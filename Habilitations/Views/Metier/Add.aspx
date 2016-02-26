@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Main.Master" Inherits="System.Web.Mvc.ViewPage<Habilitations.Models.Job>" %>
 <%@ import namespace="Habilitations.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -16,7 +16,29 @@
     <fieldset>
         <legend>Metier</legend>
 
-        <input type="hidden" name="userId" value="0" />
+        <div class="editor-label">
+            Métier
+        </div>
+        <div class="editor-field editor-uppercase">
+           <select id="MetierId" name="MetierId"></select>
+            <%: Html.ValidationMessageFor(model => model.MetierId) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.DebutJob) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.DebutJob) %>
+            <%: Html.ValidationMessageFor(model => model.DebutJob) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.FinJob) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.FinJob) %>
+            <%: Html.ValidationMessageFor(model => model.FinJob) %>
+        </div>
 
         <select name="metierId">
             <% foreach(Categorie categorie in Model) { %>
@@ -36,5 +58,11 @@
         </p>
     </fieldset>
 <% } %>
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON("/Metier/Get", {}, function (data) {
+                console.log(data);
+            });
+        });
+    </script>
 </asp:Content>

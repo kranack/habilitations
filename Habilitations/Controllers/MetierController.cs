@@ -27,19 +27,29 @@ namespace Habilitations.Controllers
 
             return View(users);
         }
+        
+        //
+        // GET: /Metier/Get
 
+        public ActionResult Get()
+        {
+            DbSet<Categorie> categories = db.Categories;
+
+            return Json(categories, JsonRequestBehavior.AllowGet);
+        }
         //
         // GET: /Metier/Add/5
 
         public ActionResult Add(int id = 0)
         {
             User user = db.Users.Find(id);
-            DbSet<Categorie> categories = db.Categories;
             if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(categories);
+            Job job = new Job();
+            job.UserId = user.ID;
+            return View(job);
         }
 
         //
@@ -47,16 +57,17 @@ namespace Habilitations.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(int metierId, int userId)
+        public ActionResult Add(Job job)
         {
-            System.Diagnostics.Debug.WriteLine(metierId);
-            DbSet<Categorie> categories = db.Categories;
             if (ModelState.IsValid)
             {
-                
+                db.Jobs.Add(job);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
             }
 
-            return View(categories);
+            return View(job);
         }
 
     }
