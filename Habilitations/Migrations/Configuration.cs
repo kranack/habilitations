@@ -1,20 +1,20 @@
+using Habilitations.Models;
+
 namespace Habilitations.Migrations
 {
-    using Habilitations.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Habilitations.Models.AppDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AppDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Habilitations.Models.AppDBContext";
         }
 
-        protected override void Seed(Habilitations.Models.AppDBContext context)
+        protected override void Seed(AppDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -28,16 +28,16 @@ namespace Habilitations.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            
+
             context.Categories.AddOrUpdate(
-                c => c.Nom,
-                new Categorie { ID = 1, Nom = "Achats"},
-                new Categorie { ID = 2, Nom = "Commerce"},
-                new Categorie { ID = 3, Nom = "Ressources Humaines"},
-                new Categorie { ID = 4, Nom = "Conseil"},
-                new Categorie { ID = 5, Nom = "IT"},
-                new Categorie { ID = 6, Nom = "Communication/Media"}
-            );
+              c => c.Nom,
+              new Categorie { ID = 1, Nom = "Achats" },
+              new Categorie { ID = 2, Nom = "Commerce" },
+              new Categorie { ID = 3, Nom = "Ressources Humaines" },
+              new Categorie { ID = 4, Nom = "Conseil" },
+              new Categorie { ID = 5, Nom = "IT" },
+              new Categorie { ID = 6, Nom = "Communication/Media" }
+          );
 
             context.Metiers.AddOrUpdate(
                 m => m.Nom,

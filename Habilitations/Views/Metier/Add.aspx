@@ -16,7 +16,9 @@
     <fieldset>
         <legend>Metier</legend>
 
-        <select>
+        <input type="hidden" name="userId" value="0" />
+
+        <select name="metierId">
             <% foreach(Categorie categorie in Model) { %>
         
                 <optgroup label="<%: categorie.Nom %>">

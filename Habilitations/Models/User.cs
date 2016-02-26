@@ -26,8 +26,7 @@ namespace Habilitations.Models
         public DateTime DateEntree { get; set; }
 
         //[ForeignKey("Job")]
-        public int? MetierId { get; set; }
-        public virtual Metier Metier { get; set; }
+        public virtual ICollection<Job> Jobs { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
     }

@@ -35,10 +35,6 @@ namespace Habilitations.Controllers
         {
             User user = db.Users.Find(id);
             DbSet<Categorie> categories = db.Categories;
-            System.Diagnostics.Debug.WriteLine(user.Matricule);
-            foreach(Categorie categorie in categories) {
-                System.Diagnostics.Debug.WriteLine(categorie.Nom);
-            }
             if (user == null)
             {
                 return HttpNotFound();
@@ -51,14 +47,16 @@ namespace Habilitations.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(Job job)
+        public ActionResult Add(int metierId, int userId)
         {
+            System.Diagnostics.Debug.WriteLine(metierId);
+            DbSet<Categorie> categories = db.Categories;
             if (ModelState.IsValid)
             {
                 
             }
 
-            return View(job);
+            return View(categories);
         }
 
     }

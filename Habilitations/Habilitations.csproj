@@ -146,17 +146,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602251359385_InitialCreate.cs" />
-    <Compile Include="Migrations\201602251359385_InitialCreate.Designer.cs">
-      <DependentUpon>201602251359385_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602251406264_init.cs" />
-    <Compile Include="Migrations\201602251406264_init.Designer.cs">
-      <DependentUpon>201602251406264_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602251420132_init1.cs" />
-    <Compile Include="Migrations\201602251420132_init1.Designer.cs">
-      <DependentUpon>201602251420132_init1.cs</DependentUpon>
+    <Compile Include="Migrations\201602261613587_Habilitations.cs" />
+    <Compile Include="Migrations\201602261613587_Habilitations.Designer.cs">
+      <DependentUpon>201602261613587_Habilitations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppIdentity.cs" />
@@ -172,10 +164,6 @@
     <Content Include="App_Data\Habilitations.Models.AppDBContext.mdf" />
     <Content Include="App_Data\Habilitations.Models.AppDBContext_log.ldf">
       <DependentUpon>Habilitations.Models.AppDBContext.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Habilitations.Models.USerDBContext.mdf" />
-    <Content Include="App_Data\Habilitations.Models.USerDBContext_log.ldf">
-      <DependentUpon>Habilitations.Models.USerDBContext.mdf</DependentUpon>
     </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -274,18 +262,12 @@
     <Content Include="Views\Shared\Main.Master" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602251359385_InitialCreate.resx">
-      <DependentUpon>201602251359385_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602251406264_init.resx">
-      <DependentUpon>201602251406264_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602251420132_init1.resx">
-      <DependentUpon>201602251420132_init1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <EmbeddedResource Include="Migrations\201602261613587_Habilitations.resx">
+      <DependentUpon>201602261613587_Habilitations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
