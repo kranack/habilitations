@@ -22,7 +22,7 @@
                 <optgroup label="<%: categorie.Nom %>">
                     <% foreach(Metier metier in categorie.Metiers) { %>
 
-                      <option value="<%: metier.Nom %>"><%: metier.Nom %></option>
+                      <option value="<%: metier.ID %>"><%: metier.Nom %></option>
 
                     <% } %>
                 </optgroup>
