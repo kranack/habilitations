@@ -62,6 +62,9 @@
         $(document).ready(function() {
             $.getJSON("/Metier/Get", {}, function (data) {
                 console.log(data);
+                $.each(data, function (categorie) {
+                    //
+                });
             });
         });
     </script>

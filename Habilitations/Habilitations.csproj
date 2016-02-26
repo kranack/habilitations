@@ -147,9 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602261709248_Habilitations.cs" />
-    <Compile Include="Migrations\201602261709248_Habilitations.Designer.cs">
-      <DependentUpon>201602261709248_Habilitations.cs</DependentUpon>
+    <Compile Include="Migrations\201602261745076_Habilitations.cs" />
+    <Compile Include="Migrations\201602261745076_Habilitations.Designer.cs">
+      <DependentUpon>201602261745076_Habilitations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppIdentity.cs" />
@@ -162,10 +162,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Habilitations.Models.AppDBContext.mdf" />
-    <Content Include="App_Data\Habilitations.Models.AppDBContext_log.ldf">
-      <DependentUpon>Habilitations.Models.AppDBContext.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -281,9 +277,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602261709248_Habilitations.resx">
-      <DependentUpon>201602261709248_Habilitations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602261745076_Habilitations.resx">
+      <DependentUpon>201602261745076_Habilitations.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
