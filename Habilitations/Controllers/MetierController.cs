@@ -33,9 +33,11 @@ namespace Habilitations.Controllers
 
         public ActionResult Get()
         {
-            var categories = db.Metiers.Select(c => new { c.ID, c.Nom }).OrderBy(c => new { c.CategorieId });
+            var metiers = db.Metiers.Select(c => new { c.ID, c.Nom });
 
-            return Json(categories, JsonRequestBehavior.AllowGet);
+            var metiers2 = db.Metiers.Select(m => new { id = m.ID, nom = m.Nom, categorieId = m.CategorieId, categorieNom = m.Categorie.Nom }).OrderBy(m => new { m.categorieId });
+
+            return Json(metiers2, JsonRequestBehavior.AllowGet);
         }
         //
         // GET: /Metier/Add/5

@@ -55,9 +55,14 @@
         $(document).ready(function() {
             $.getJSON("/Metier/Get", {}, function (data) {
                 console.log(data);
+                var metiers = [];
                 $.each(data, function (id, categorie) {
                     console.log(categorie);
-                    $("#metierId").append('<option value="'+categorie.ID+'">'+categorie.Nom+'</option>');
+                    metiers[categorie.categorieId] = { categorieNom: categorie.categorieNom, metierId: categorie.id, metier: categorie.nom };
+                    if ($("#categorie" + categorie.categorieId).length > 0) {
+
+                    }
+                    //$("#metierId").append('<option value="'+categorie.id+'">'+categorie.Nom+'</option>');
                 });
             });
         });
