@@ -14,7 +14,7 @@
     <%: Html.ValidationSummary(true) %>
 
     <fieldset>
-        <legend>Metier</legend>
+        <legend>Role</legend>
 
         <div class="editor-label">
             Date de début du boulot
@@ -49,16 +49,11 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $.getJSON("/Metier/Get", {}, function (data) {
-                console.log(data);
-                var metiers = [];
                 $.each(data, function (id, categorie) {
-                    console.log(categorie);
-                    metiers[categorie.categorieId] = { categorieNom: categorie.categorieNom, metierId: categorie.id, metier: categorie.nom };
                     if ($("#categorie" + categorie.categorieId).length == 0) {
                         $("#metierId").append('<optgroup id="categorie' + categorie.categorieId + '" label="' + categorie.categorieNom + '"></optgroup>');
                     }
-                    $("#categorie" + categorie.categorieId).append('<option value="' + categorie.id + '">' + categorie.nom + '</option>')
-                    //$("#metierId").append('<option value="'+categorie.id+'">'+categorie.Nom+'</option>');
+                    $("#categorie" + categorie.categorieId).append('<option value="' + categorie.id + '">' + categorie.nom + '</option>');
                 });
             });
         });

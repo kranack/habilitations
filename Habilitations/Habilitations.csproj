@@ -262,6 +262,8 @@
     <Content Include="Views\Metier\Add.aspx" />
     <Content Include="Views\Metier\Index.aspx" />
     <Content Include="Views\Metier\List.aspx" />
+    <Content Include="Views\Role\Add.aspx" />
+    <Content Include="Views\Role\List.aspx" />
     <Content Include="Views\User\Signup.aspx" />
     <Content Include="Views\User\Delete.aspx" />
     <Content Include="Views\User\Details.aspx" />

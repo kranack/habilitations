@@ -8,7 +8,7 @@
 
 <h2>List</h2>
 
-        <table class="table">
+    <table class="table">
         <tr>
              <th>
                 Métier
