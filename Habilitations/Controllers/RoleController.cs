@@ -11,6 +11,7 @@ namespace Habilitations.Controllers
     {
         private AppDBContext db = new AppDBContext();
 
+
         //
         // GET: /Role/List
 
@@ -66,7 +67,7 @@ namespace Habilitations.Controllers
                 role.Users.Add(user);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List", new { id = userId });
             }
 
             return View(userId);
