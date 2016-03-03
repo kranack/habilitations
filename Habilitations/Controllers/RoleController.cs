@@ -61,7 +61,7 @@ namespace Habilitations.Controllers
             Role role = db.Roles.Find(roleId);
             User user = db.Users.Find(userId);
 
-            if (role != null || user != null)
+            if (role != null && user != null && !user.Roles.Contains(role))
             {
                 user.Roles.Add(role);
                 role.Users.Add(user);
