@@ -19,5 +19,7 @@ namespace Habilitations.Models
         public DbSet<Job> Jobs { get; set; }
 
         public DbSet<Metier> Metiers { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
     }
 }

@@ -33,12 +33,33 @@ namespace Habilitations.Controllers
 
         public ActionResult Get()
         {
-            var metiers = db.Metiers.Select(c => new { c.ID, c.Nom });
+            //var metiers = db.Metiers.Select(c => new { c.ID, c.Nom });
 
-            var metiers2 = db.Metiers.Select(m => new { id = m.ID, nom = m.Nom, categorieId = m.CategorieId, categorieNom = m.Categorie.Nom }).OrderBy(m => new { m.categorieId });
+            var metiers = db.Metiers.Select(m => new { id = m.ID, nom = m.Nom, categorieId = m.CategorieId, categorieNom = m.Categorie.Nom }).OrderBy(m => new { m.categorieId });
 
-            return Json(metiers2, JsonRequestBehavior.AllowGet);
+            return Json(metiers, JsonRequestBehavior.AllowGet);
         }
+
+
+        //
+        // GET: /Metier/List/5
+
+        public ActionResult List(int id = 0)
+        {
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            //var jobs = db.Jobs.Where(j => j.ID.Equals(user.ID));
+            var jobs = from j in db.Jobs
+                       where j.UserId == user.ID
+                       select j;
+
+            return View(jobs);
+        }
+
         //
         // GET: /Metier/Add/5
 
@@ -63,6 +84,7 @@ namespace Habilitations.Controllers
         {
             if (ModelState.IsValid)
             {
+                System.Diagnostics.Debug.WriteLine(job);
                 db.Jobs.Add(job);
                 db.SaveChanges();
 

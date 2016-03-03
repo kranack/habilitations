@@ -17,16 +17,11 @@
         <legend>Metier</legend>
 
         <div class="editor-label">
-            Métier
-        </div>
-        <div class="editor-field editor-uppercase">
-           <select id="MetierId" name="MetierId"></select>
-            <%: Html.ValidationMessageFor(model => model.MetierId) %>
-        </div>
-
-        <div class="editor-label">
             Date de début du boulot
         </div>
+
+        <input type="hidden" name="UserId" value="<%: Model.UserId %>" />
+
         <div class="editor-field">
             <%: Html.EditorFor(model => model.DebutJob) %>
             <%: Html.ValidationMessageFor(model => model.DebutJob) %>
@@ -43,7 +38,7 @@
         <div class="editor-label">
             Métier
         </div>
-        <select id="metierId" name="metierId">
+        <select id="metierId" name="MetierId">
             
         </select>
         <p>
@@ -59,9 +54,10 @@
                 $.each(data, function (id, categorie) {
                     console.log(categorie);
                     metiers[categorie.categorieId] = { categorieNom: categorie.categorieNom, metierId: categorie.id, metier: categorie.nom };
-                    if ($("#categorie" + categorie.categorieId).length > 0) {
-
+                    if ($("#categorie" + categorie.categorieId).length == 0) {
+                        $("#metierId").append('<optgroup id="categorie' + categorie.categorieId + '" label="' + categorie.categorieNom + '"></optgroup>');
                     }
+                    $("#categorie" + categorie.categorieId).append('<option value="' + categorie.id + '">' + categorie.nom + '</option>')
                     //$("#metierId").append('<option value="'+categorie.id+'">'+categorie.Nom+'</option>');
                 });
             });

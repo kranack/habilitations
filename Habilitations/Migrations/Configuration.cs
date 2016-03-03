@@ -58,6 +58,19 @@ namespace Habilitations.Migrations
                 new Metier { ID = 15, Nom = "Chef de projet event", DebutValidite = DateTime.Parse("12/12/2015"), FinValidite = DateTime.Parse("12/12/2017"), CategorieId = 6 },
                 new Metier { ID = 16, Nom = "Chef de projet éditorial", DebutValidite = DateTime.Parse("12/12/2015"), FinValidite = DateTime.Parse("12/12/2017"), CategorieId = 6 }
             );
+
+            context.Roles.AddOrUpdate(
+              r => r.Nom,
+              new Role { ID = 1, Nom = "Manager" },
+              new Role { ID = 2, Nom = "Chef d'équipe" },
+              new Role { ID = 3, Nom = "Responsable fonctionnel" },
+              new Role { ID = 4, Nom = "Responsable technique" },
+              new Role { ID = 5, Nom = "Apprenti" },
+              new Role { ID = 6, Nom = "Organisateur" },
+              new Role { ID = 7, Nom = "Coordinateur" },
+              new Role { ID = 8, Nom = "Référent technique" },
+              new Role { ID = 9, Nom = "Référent fonctionnel" }
+          );
         }
     }
 }

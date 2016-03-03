@@ -49,7 +49,8 @@
                     <%: Html.DisplayFor(modelItem => item.DateEntree) %>
                 </td>
                 <td>
-                    <%: Html.ActionLink("Add", "Add", new { id=item.ID }) %> |
+                    <%: Html.ActionLink("Add a Job", "Add", new { id=item.ID }) %> | <%: Html.ActionLink("List all jobs", "List", new { id=item.ID }) %> |
+                    <a href="/Role/Add/<%: item.ID %>">Add a Role</a> | <a href="/Role/List/<%: item.ID %>">List all roles</a>
                 </td>
             </tr>
         <% } %>
