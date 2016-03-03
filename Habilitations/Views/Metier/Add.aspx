@@ -25,7 +25,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.DebutJob) %>
+            Date de début du boulot
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.DebutJob) %>
@@ -33,25 +33,18 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.FinJob) %>
+            Date de fin du boulot
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.FinJob) %>
             <%: Html.ValidationMessageFor(model => model.FinJob) %>
         </div>
 
-        <select name="metierId">
-            <% foreach(Categorie categorie in Model) { %>
-        
-                <optgroup label="<%: categorie.Nom %>">
-                    <% foreach(Metier metier in categorie.Metiers) { %>
-
-                      <option value="<%: metier.ID %>"><%: metier.Nom %></option>
-
-                    <% } %>
-                </optgroup>
-
-            <% } %>
+        <div class="editor-label">
+            Métier
+        </div>
+        <select id="metierId" name="metierId">
+            
         </select>
         <p>
             <input type="submit" value="Create" />
@@ -62,8 +55,9 @@
         $(document).ready(function() {
             $.getJSON("/Metier/Get", {}, function (data) {
                 console.log(data);
-                $.each(data, function (categorie) {
-                    //
+                $.each(data, function (id, categorie) {
+                    console.log(categorie);
+                    $("#metierId").append('<option value="'+categorie.ID+'">'+categorie.Nom+'</option>');
                 });
             });
         });

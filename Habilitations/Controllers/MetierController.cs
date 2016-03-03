@@ -33,7 +33,7 @@ namespace Habilitations.Controllers
 
         public ActionResult Get()
         {
-            DbSet<Categorie> categories = db.Categories;
+            var categories = db.Metiers.Select(c => new { c.ID, c.Nom }).OrderBy(c => new { c.CategorieId });
 
             return Json(categories, JsonRequestBehavior.AllowGet);
         }
