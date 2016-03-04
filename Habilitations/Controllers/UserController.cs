@@ -51,7 +51,7 @@ namespace Habilitations.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Signup(User user)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && user.DateEntree > user.DateNaissance)
             {
                 string matricule = user.Prenom[0] + user.Nom;
                 CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -59,7 +59,6 @@ namespace Habilitations.Controllers
                 user.Matricule = matricule.ToLower();
                 user.Nom = user.Nom.ToUpper();
                 user.Prenom = textInfo.ToTitleCase(user.Prenom);
-                Console.WriteLine(user);
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -88,8 +87,14 @@ namespace Habilitations.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(User user)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && user.DateEntree > user.DateNaissance)
             {
+                string matricule = user.Prenom[0] + user.Nom;
+                CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+                TextInfo textInfo = cultureInfo.TextInfo;
+                user.Matricule = matricule.ToLower();
+                user.Nom = user.Nom.ToUpper();
+                user.Prenom = textInfo.ToTitleCase(user.Prenom);
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

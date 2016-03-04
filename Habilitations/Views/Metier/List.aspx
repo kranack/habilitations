@@ -37,4 +37,6 @@
         <% } %>
     </table>
 
+    <%: Html.ActionLink("Back to user search", "Index") %>
+
 </asp:Content>

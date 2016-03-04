@@ -58,4 +58,7 @@
             });
         });
     </script>
+
+    <%: Html.ActionLink("Back to user search", "Index") %>
+    <%: Html.ActionLink("Go to user's job list", "List", new { id = Model.UserId })%>
 </asp:Content>

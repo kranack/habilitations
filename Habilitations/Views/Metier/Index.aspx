@@ -57,4 +57,6 @@
             <% } %>
         <% } %>
     </table>
+
+    <p><a href="/">Retour à l'accueil</a></p>
 </asp:Content>

@@ -20,7 +20,7 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Nom) %>
         </div>
-        <div class="editor-field">
+        <div class="editor-field editor-uppercase">
             <%: Html.EditorFor(model => model.Nom) %>
             <%: Html.ValidationMessageFor(model => model.Nom) %>
         </div>
@@ -28,7 +28,7 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Prenom) %>
         </div>
-        <div class="editor-field">
+        <div class="editor-field editor-capitalize">
             <%: Html.EditorFor(model => model.Prenom) %>
             <%: Html.ValidationMessageFor(model => model.Prenom) %>
         </div>
@@ -45,7 +45,7 @@
             <%: Html.LabelFor(model => model.DateEntree) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.DateEntree) %>
+            <%: Html.EditorFor(model => model.DateEntree, "{0:dd/MM/yyyy}") %>
             <%: Html.ValidationMessageFor(model => model.DateEntree) %>
         </div>
 

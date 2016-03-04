@@ -23,5 +23,5 @@
         <% } %>
     </table>
 
-    <a href="/Metier">Retourner à la liste des utilisateurs</a>
+    <a href="/Metier">Back to user search</a>
 </asp:Content>

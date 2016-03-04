@@ -19,8 +19,7 @@
             <%: Html.LabelFor(model => model.Nom) %>
         </div>
         <div class="editor-field editor-uppercase">
-            <%: @Html.EditorFor(model => model.Nom) 
-            %>
+            <%: @Html.EditorFor(model => model.Nom) %>
             <%: Html.ValidationMessageFor(model => model.Nom) %>
         </div>
 

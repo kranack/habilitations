@@ -148,9 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201603031811211_Habilitations.cs" />
-    <Compile Include="Migrations\201603031811211_Habilitations.Designer.cs">
-      <DependentUpon>201603031811211_Habilitations.cs</DependentUpon>
+    <Compile Include="Migrations\201603040746142_Demo.cs" />
+    <Compile Include="Migrations\201603040746142_Demo.Designer.cs">
+      <DependentUpon>201603040746142_Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppIdentity.cs" />
@@ -283,9 +283,10 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603031811211_Habilitations.resx">
-      <DependentUpon>201603031811211_Habilitations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603040746142_Demo.resx">
+      <DependentUpon>201603040746142_Demo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

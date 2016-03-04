@@ -29,6 +29,8 @@
             </p>
         </fieldset>
     <% } %>
+     
+    <%: Html.ActionLink("Go to role list", "List", new { id = Model}) %>
 
      <script type="text/javascript">
         $(document).ready(function() {

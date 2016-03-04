@@ -74,6 +74,7 @@ namespace Habilitations.Controllers
             {
                 return HttpNotFound();
             }
+
             Job job = new Job();
             job.UserId = user.ID;
             return View(job);
@@ -92,7 +93,7 @@ namespace Habilitations.Controllers
                 db.Jobs.Add(job);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List", new { id = job.UserId });
             }
 
             return View(job);
